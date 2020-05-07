@@ -15,6 +15,11 @@ Plantes::Plantes(float growSpeed, int size, string name) : _maturity(1), _growSp
 {
 }
 
+string Plantes::getName()
+{
+    return _name;
+}
+
 void Plantes::inspect()
 {
     cout << "La plante est hydratee a " << _hydratation << "%, sa sante est de " << _health << " sur 100, son espece est : " << _name << "." << endl;
