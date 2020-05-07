@@ -34,14 +34,51 @@ void Botanist::sleep()
 
 void Botanist::buyPlant()
 {
+    if (_money > 20)
+    {
+        cout << "Une plante coute 20 euro, donnez lui un nom :" << endl;
+        string newName = "unnamed";
+        cin >> newName;
+
+        Plantes *plant = new Plantes(newName);
+        _plantInventory.push_back(plant);
+        _money -= 20;
+    }
+    else
+    {
+        cout << "Vous n'avez pas assez d'argent" << endl;
+    }
 }
 
 void Botanist::sellPlant()
 {
+    cout << "Vous pouvez vendre :" << endl;
+    for (int i = 0; i < _plantInventory.size(); i++)
+    {
+        if (_plantInventory[i]->getMaturity() > 10)
+        {
+            cout << i + 1 << " : " << _plantInventory[i]->getName() << endl;
+        }
+    }
+
+    // int plant = 0;
+    // cin >> plant;
+    // delete _plantInventory[plant];
+    // _plantInventory[plant].erase;
+    // _money += 50;
 }
 
 void Botanist::buyFertilizer()
 {
+    if (_money > 10)
+    {
+        _money -= 10;
+        _fertilizer++;
+    }
+    else
+    {
+        cout << "Vous n'avez pas assez d'argent." << endl;
+    }
 }
 
 void Botanist::inspectPlant()

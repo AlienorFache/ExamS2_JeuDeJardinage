@@ -17,6 +17,7 @@ class Plantes{
         Plantes(float growSpeed, int size, std::string name);
         Plantes(std::string name);
         std::string getName();
+        int getMaturity();
         void inspect();
         void fertilize();
         void cut(int cutLength);

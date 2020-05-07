@@ -19,6 +19,10 @@ string Plantes::getName()
 {
     return _name;
 }
+int Plantes::getMaturity()
+{
+    return _maturity;
+}
 
 void Plantes::inspect()
 {
